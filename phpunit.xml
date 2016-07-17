@@ -1,0 +1,9 @@
+<phpunit bootstrap="vendor/autoload.php">
+  <testsuites>
+    <testsuite name="Computer">
+      <file>tests/functional/AppleTest.php</file>
+      <file>tests/unit/PCTest.php</file>
+      <file>tests/unit/SSDTest.php</file>
+    </testsuite>
+  </testsuites>
+</phpunit>

@@ -1,6 +1,10 @@
 <?php
 
 namespace Crowdtwist\Lib;
+use Crowdtwist\Contracts\Computer;
+use Crowdtwist\Contracts\DiskStorage;
+use Crowdtwist\Contracts\GPU;
+use Crowdtwist\Contracts\CPU;
 
 /**
  * Class BaseComputer
@@ -27,7 +31,7 @@ abstract class BaseComputer implements Computer {
     public function power()
     {
         $this->state = $this->state ? false : true;
-        return $state;
+        return $this->state;
     }
 
     public function doMath($x, $y)
@@ -35,13 +39,13 @@ abstract class BaseComputer implements Computer {
         $result = $this->cpu->process(function() use ($x, $y) {
             return $x + $y;
         });
-        $this->store($result);
+        $this->save($result);
         return $this->display($result);
     }
 
     protected function display($data) {
         $this->gpu->put($data);
-        $this->gpu->show();
+        return $this->gpu->show();
     }
 
     protected function save($data)

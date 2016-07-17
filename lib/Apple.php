@@ -1,6 +1,8 @@
 <?php
 
 namespace Crowdtwist\Lib;
+use Crowdtwist\Contracts\Computer;
+
 
 /**
  * Class Apple

@@ -3,9 +3,10 @@ use PHPUnit\Framework\TestCase;
 use Crowdtwist\Lib\Nvidia;
 use Crowdtwist\Lib\SSD;
 use Crowdtwist\Lib\Intel;
+use Crowdtwist\Lib\Apple;
+use Crowdtwist\Lib\PC;
 
-
-class MoneyTest extends TestCase
+class AppleTest extends TestCase
 {
     private $hd;
     private $gpu;
@@ -16,17 +17,16 @@ class MoneyTest extends TestCase
 	$this->gpu = new Nvidia();
 	$this->cpu = new Intel();
 	$this->hd = new SSD();
+	$this->apple = new Apple($this->hd, $this->gpu, $this->cpu);
     }
 
     public function testPower()
     {
-	$apple = new Apple($this->hd, $this->gpu, $this->cpu);
-	$this->assertEquals($apple->power(), true);
+	$this->assertEquals($this->apple->power(), true);
     }
 
     public function testDoMath() 
     {
-	$pc = new PC($this->hd, $this->gpu, $this->cpu);
-	$this->assertEquals(5, $this->pc->doMath(1, 4));
+	$this->assertEquals(5, $this->apple->doMath(1, 4));
     }
 }

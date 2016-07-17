@@ -166,7 +166,9 @@ class ComposerStaticInite6c9f106eea2a38716b066b36bb4b5e8
     );
 
     public static $classMap = array (
+        'Crowdtwist\\Contracts\\CPU' => __DIR__ . '/../..' . '/Contracts/CPU.php',
         'Crowdtwist\\Contracts\\Computer' => __DIR__ . '/../..' . '/Contracts/Computer.php',
+        'Crowdtwist\\Contracts\\DiskStorage' => __DIR__ . '/../..' . '/Contracts/DiskStorage.php',
         'Crowdtwist\\Contracts\\GPU' => __DIR__ . '/../..' . '/Contracts/GPU.php',
         'Crowdtwist\\Lib\\Apple' => __DIR__ . '/../..' . '/lib/Apple.php',
         'Crowdtwist\\Lib\\BaseComputer' => __DIR__ . '/../..' . '/lib/BaseComputer.php',

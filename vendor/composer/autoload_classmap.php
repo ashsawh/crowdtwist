@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Crowdtwist\\Contracts\\CPU' => $baseDir . '/Contracts/CPU.php',
     'Crowdtwist\\Contracts\\Computer' => $baseDir . '/Contracts/Computer.php',
+    'Crowdtwist\\Contracts\\DiskStorage' => $baseDir . '/Contracts/DiskStorage.php',
     'Crowdtwist\\Contracts\\GPU' => $baseDir . '/Contracts/GPU.php',
     'Crowdtwist\\Lib\\Apple' => $baseDir . '/lib/Apple.php',
     'Crowdtwist\\Lib\\BaseComputer' => $baseDir . '/lib/BaseComputer.php',

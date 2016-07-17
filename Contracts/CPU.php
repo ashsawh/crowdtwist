@@ -10,5 +10,5 @@ namespace Crowdtwist\Contracts;
  *
  */
 interface CPU {
-    public function process(Closure $closure);
+    public function process(\Closure $closure);
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace Crowdtwist\Lib;
+use Crowdtwist\Contracts\CPU;
 
 /**
  * Class Intel

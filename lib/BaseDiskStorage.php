@@ -1,6 +1,7 @@
 <?php
 
 namespace Crowdtwist\Lib;
+use Crowdtwist\Contracts\DiskStorage;
 
 /**
  * Class BaseDiskStorage

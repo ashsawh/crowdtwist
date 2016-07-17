@@ -1,6 +1,7 @@
 <?php
 
 namespace Crowdtwist\Lib;
+use Crowdtwist\Contracts\GPU;
 
 /**
  * Class Nvidia
@@ -10,7 +11,7 @@ class Nvidia implements GPU {
     protected $input;
 
     public function put($input)
-    {
+    { 
         $this->input = $input;
     }
 
