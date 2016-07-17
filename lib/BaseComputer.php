@@ -27,7 +27,7 @@ abstract class BaseComputer implements Computer {
     public function power()
     {
         $this->state = $this->state ? false : true;
-        return $this;
+        return $state;
     }
 
     public function doMath($x, $y)

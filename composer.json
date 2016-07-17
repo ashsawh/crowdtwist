@@ -1,0 +1,13 @@
+{
+        "require-dev": {
+                "phpunit/phpunit": "5.4.*",
+		"codeception/codeception": "*",
+		"mockery/mockery": "0.9.*"
+        },
+        "autoload": {
+                "classmap": [
+                        "lib/",
+                        "Contracts/"
+                ]
+        }
+}
