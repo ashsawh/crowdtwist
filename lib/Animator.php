@@ -2,6 +2,10 @@
 
 namespace Crowdtwist\Lib;
 
+use Crowdtwist\Contracts\Display;
+use Crowdtwist\Contracts\Animation;
+use Crowdtwist\Contracts\Output;
+
 /**
  * Class CrowdtwistAnimator
  * @package Crowdtwist\Lib
@@ -66,7 +70,7 @@ class CrowdtwistAnimator implements Animation {
     private function cycleChamber()
     {
         $this->display->setChamber($this->positions);
-        $this->display->showChamber();
+        $this->display->cycle();
     }
 
     public function iterate()
@@ -77,6 +81,7 @@ class CrowdtwistAnimator implements Animation {
             $this->move($this->move);
         }
         $this->cycleChamber();
+	return $this->display->show();
     }
 
     public function animate($speed, $init)
@@ -84,6 +89,6 @@ class CrowdtwistAnimator implements Animation {
         $this->positions = $this->display->initialize($init);
         $this->length = $this->display->getChamberSize();
         $this->move = $speed;
-        $this->iterate();
+        return $this->iterate();
     }
 }

@@ -7,7 +7,8 @@ namespace Crowdtwist\Contracts;
  */
 interface Output {
     public function setChamber($positions);
-    public function showChamber();
+    public function show();
+    public function cycle();
     public function getChamberSize();
     public function initialize($init);
 }

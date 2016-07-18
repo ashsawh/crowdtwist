@@ -6,13 +6,17 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Crowdtwist\\Contracts\\Animation' => $baseDir . '/Contracts/Animation.php',
     'Crowdtwist\\Contracts\\CPU' => $baseDir . '/Contracts/CPU.php',
     'Crowdtwist\\Contracts\\Computer' => $baseDir . '/Contracts/Computer.php',
     'Crowdtwist\\Contracts\\DiskStorage' => $baseDir . '/Contracts/DiskStorage.php',
     'Crowdtwist\\Contracts\\GPU' => $baseDir . '/Contracts/GPU.php',
+    'Crowdtwist\\Contracts\\Output' => $baseDir . '/Contracts/Output.php',
     'Crowdtwist\\Lib\\Apple' => $baseDir . '/lib/Apple.php',
     'Crowdtwist\\Lib\\BaseComputer' => $baseDir . '/lib/BaseComputer.php',
     'Crowdtwist\\Lib\\BaseDiskStorage' => $baseDir . '/lib/BaseDiskStorage.php',
+    'Crowdtwist\\Lib\\CrowdtwistAnimator' => $baseDir . '/lib/Animator.php',
+    'Crowdtwist\\Lib\\Display' => $baseDir . '/lib/Display.php',
     'Crowdtwist\\Lib\\HDD' => $baseDir . '/lib/HDD.php',
     'Crowdtwist\\Lib\\Intel' => $baseDir . '/lib/Intel.php',
     'Crowdtwist\\Lib\\Nvidia' => $baseDir . '/lib/Nvidia.php',

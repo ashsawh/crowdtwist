@@ -5,5 +5,8 @@
       <file>tests/unit/PCTest.php</file>
       <file>tests/unit/SSDTest.php</file>
     </testsuite>
+    <testsuite name="Animation">
+      <file>tests/acceptance/AnimatorTest.php</file>
+    </testsuite>
   </testsuites>
 </phpunit>

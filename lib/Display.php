@@ -2,26 +2,41 @@
 
 namespace Crowdtwist\Lib;
 
+use Crowdtwist\Contracts\Output;
 /**
  * Class Display
  * @package Crowdtwist\Lib
  */
 class Display implements Output {
     protected $chamber;
+    protected $contents;
     const TILE = '.';
+
+    function __construct()
+    {
+	$this->contents = array();
+    }
 
     public function getChamberSize()
     {
         return $this->length;
     }
 
-    public function showChamber()
+    public function cycle()
     {
+	$line = '';
         for($i = 0; $i < $this->length; $i++)
         {
-            echo isset($this->chamber[$i]) ? 'X' : self::TILE;
+	    $line .= isset($this->chamber[$i]) ? 'X' : self::TILE;
+            #echo isset($this->chamber[$i]) ? 'X' : self::TILE;
         }
-        echo "\r\n";
+	$this->contents[] = $line;
+        #echo "\r\n";
+    }
+
+    public function show()
+    {
+	return $this->contents;
     }
 
     public function setChamber($chamber)
