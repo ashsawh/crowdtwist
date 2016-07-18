@@ -22,28 +22,44 @@ class Display implements Output {
         return $this->length;
     }
 
+    /**
+     * Interprets current chamber positions and draws the empty and active tiles
+     */
     public function cycle()
     {
-	$line = '';
+	    $line = '';
         for($i = 0; $i < $this->length; $i++)
         {
 	    $line .= isset($this->chamber[$i]) ? 'X' : self::TILE;
             #echo isset($this->chamber[$i]) ? 'X' : self::TILE;
         }
-	$this->contents[] = $line;
+	    $this->contents[] = $line;
         #echo "\r\n";
     }
 
+    /**
+     * Get drawn array of strings
+     * @return array
+     */
     public function show()
     {
-	return $this->contents;
+	    return $this->contents;
     }
 
+    /**
+     * Accepts the chamber configuration used to draw
+     * @param $chamber
+     */
     public function setChamber($chamber)
     {
         $this->chamber = $chamber;
     }
 
+    /**
+     * Accepts the configuration and creates the chamber
+     * @param $init string
+     * @return mixed
+     */
     public function initialize($init)
     {
         $this->length = strlen($init);

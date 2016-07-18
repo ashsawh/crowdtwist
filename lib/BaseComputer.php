@@ -28,12 +28,25 @@ abstract class BaseComputer implements Computer {
         $this->cpu = $cpu;
     }
 
+    /**
+     * Toggle on/off computer state
+     * State is stored as a bool
+     * @return bool
+     */
     public function power()
     {
         $this->state = $this->state ? false : true;
         return $this->state;
     }
 
+    /**
+     * Accepts two parameters and creates a closure that is then run by the CPU with the result stored in the SSD and
+     * displayed by the GPU
+     *
+     * @param $x integer
+     * @param $y integer
+     * @return mixed
+     */
     public function doMath($x, $y)
     {
         $result = $this->cpu->process(function() use ($x, $y) {
@@ -43,11 +56,22 @@ abstract class BaseComputer implements Computer {
         return $this->display($result);
     }
 
+    /**
+     * Pushes data to the GPU which is then parsed and shown
+     *
+     * @param $data mixed
+     * @return mixed
+     */
     protected function display($data) {
         $this->gpu->put($data);
         return $this->gpu->show();
     }
 
+    /**
+     * Persist data in storage device
+     *
+     * @param $data
+     */
     protected function save($data)
     {
         $this->hdd->store($data);
